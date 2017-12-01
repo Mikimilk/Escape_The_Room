@@ -9,12 +9,14 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public class GameScreen extends ScreenAdapter{
 	private EscapeTheRoom EscapeGame;
     private Texture charactorImg;
+    private Texture background;
     private int x;
     private int y;
 	 
     public GameScreen(EscapeTheRoom EscapeGame) {
         this.EscapeGame = EscapeGame;
-        charactorImg = new Texture("C:\\Users\\user\\JavaGame\\EscapeTheRoom\\core\\assets\\charactor_01.png");
+        background = new Texture("C:\\Users\\user\\EscapeTheRoom\\core\\assets\\bg.png");
+        charactorImg = new Texture("C:\\Users\\user\\EscapeTheRoom\\core\\assets\\charactor_01.png");
         x = 100;
         y = 100;
     }
@@ -41,6 +43,7 @@ public class GameScreen extends ScreenAdapter{
     	update(delta);
     	SpriteBatch batch = EscapeGame.batch;
         batch.begin();
+        batch.draw(background, 0 , 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         batch.draw(charactorImg, x, y);
         batch.end();
         
