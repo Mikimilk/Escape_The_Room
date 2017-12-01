@@ -5,35 +5,35 @@ import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Vector2;
 
 public class GameScreen extends ScreenAdapter{
 	private EscapeTheRoom EscapeGame;
-    private Texture charactorImg;
+	private Player player;
+    private Texture playerImg;
     private Texture background;
-    private int x;
-    private int y;
+
 	 
     public GameScreen(EscapeTheRoom EscapeGame) {
         this.EscapeGame = EscapeGame;
         background = new Texture("bg.png");
-        charactorImg = new Texture("charactor_01.png");
-        x = 100;
-        y = 100;
+        playerImg = new Texture("charactor_01.png");
+        player = new Player(100,100);
     }
     private void update(float delta) {
-    	if(Gdx.input.isKeyPressed(Keys.LEFT)) {
-            x -= 5;
+        if(Gdx.input.isKeyPressed(Keys.UP)) {
+            player.move(Player.DIRECTION_UP);
         }
         if(Gdx.input.isKeyPressed(Keys.RIGHT)) {
-            x += 5;
-        }
-        if(Gdx.input.isKeyPressed(Keys.UP)) {
-            y += 5;
+            player.move(Player.DIRECTION_RIGHT);
         }
         if(Gdx.input.isKeyPressed(Keys.DOWN)) {
-            y -= 5;
+            player.move(Player.DIRECTION_DOWN);
         }
-    }   
+        if(Gdx.input.isKeyPressed(Keys.LEFT)) {
+            player.move(Player.DIRECTION_LEFT);
+        }
+    } 
     
     @Override
     public void render(float delta) {
@@ -44,7 +44,8 @@ public class GameScreen extends ScreenAdapter{
     	SpriteBatch batch = EscapeGame.batch;
         batch.begin();
         batch.draw(background, 0 , 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-        batch.draw(charactorImg, x, y);
+        Vector2 pos = player.getPosition();
+        batch.draw(playerImg, pos.x, pos.y);
         batch.end();
         
     }
