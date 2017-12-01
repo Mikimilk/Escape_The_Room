@@ -15,8 +15,8 @@ public class GameScreen extends ScreenAdapter{
 	 
     public GameScreen(EscapeTheRoom EscapeGame) {
         this.EscapeGame = EscapeGame;
-        background = new Texture("C:\\Users\\user\\EscapeTheRoom\\core\\assets\\bg.png");
-        charactorImg = new Texture("C:\\Users\\user\\EscapeTheRoom\\core\\assets\\charactor_01.png");
+        background = new Texture("bg.png");
+        charactorImg = new Texture("charactor_01.png");
         x = 100;
         y = 100;
     }
