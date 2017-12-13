@@ -8,7 +8,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class EscapeTheRoom extends Game {
-	SpriteBatch batch;
+	public SpriteBatch batch;
 	
 	@Override
 	public void create () {
