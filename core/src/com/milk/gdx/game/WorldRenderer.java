@@ -127,7 +127,7 @@ public class WorldRenderer{
 	    	//Draw door
 		    batch.draw(door7, DoorRight.x, DoorRight.y);
 		    batch.draw(door7, DoorLeft.x, DoorLeft.y);
-		    batch.draw(door8, DoorMid.x, DoorMid.y);
+		    batch.draw(door8, DoorMid.x-15, DoorMid.y-5);
 	    }
 
 	    //Draw charactor

@@ -59,7 +59,7 @@ public class GameScreen extends ScreenAdapter{
 	        if (d1.overlaps(p) && Gdx.input.isKeyPressed(Keys.E)) {
 	        	world.getPlayer().getPosition().x = 104;
 	        	world.getPlayer().getPosition().y = 40; 
-	        	world.Current_Room = 4; }
+	        	world.Current_Room = 1; }
 	        if (d2.overlaps(p) && Gdx.input.isKeyPressed(Keys.E)) {
 		        world.getPlayer().getPosition().x = 195;
 		        world.getPlayer().getPosition().y = 40; 
@@ -67,7 +67,7 @@ public class GameScreen extends ScreenAdapter{
 		    if (d3.overlaps(p) && Gdx.input.isKeyPressed(Keys.E)) {
 			    world.getPlayer().getPosition().x = 283;
 			    world.getPlayer().getPosition().y = 40; 
-			    world.Current_Room = 1; }
+			    world.Current_Room = 4; }
         }
         
         else if (world.Current_Room == 3) {
@@ -78,7 +78,7 @@ public class GameScreen extends ScreenAdapter{
 	        if (d2.overlaps(p) && Gdx.input.isKeyPressed(Keys.E)) {
 		        world.getPlayer().getPosition().x = 195;
 		        world.getPlayer().getPosition().y = 40; 
-		        world.Current_Room = 4; }
+		        world.Current_Room = 1; }
 		    if (d3.overlaps(p) && Gdx.input.isKeyPressed(Keys.E)) {
 			    world.getPlayer().getPosition().x = 283;
 			    world.getPlayer().getPosition().y = 40; 
@@ -100,11 +100,11 @@ public class GameScreen extends ScreenAdapter{
 	        if (d1.overlaps(p) && Gdx.input.isKeyPressed(Keys.E)) {
 	        	world.getPlayer().getPosition().x = 104;
 	        	world.getPlayer().getPosition().y = 40; 
-	        	world.Current_Room = 6; }
+	        	world.Current_Room = 4; }
 	        if (d2.overlaps(p) && Gdx.input.isKeyPressed(Keys.E)) {
 		        world.getPlayer().getPosition().x = 195;
 		        world.getPlayer().getPosition().y = 40; 
-		        world.Current_Room = 4; }
+		        world.Current_Room = 6; }
 		    if (d3.overlaps(p) && Gdx.input.isKeyPressed(Keys.E)) {
 			    world.getPlayer().getPosition().x = 283;
 			    world.getPlayer().getPosition().y = 40; 
@@ -115,11 +115,11 @@ public class GameScreen extends ScreenAdapter{
 	        if (d1.overlaps(p) && Gdx.input.isKeyPressed(Keys.E)) {
 	        	world.getPlayer().getPosition().x = 104;
 	        	world.getPlayer().getPosition().y = 40; 
-	        	world.Current_Room = 5; }
+	        	world.Current_Room = 1; }
 		    if (d3.overlaps(p) && Gdx.input.isKeyPressed(Keys.E)) {
 			    world.getPlayer().getPosition().x = 283;
 			    world.getPlayer().getPosition().y = 40; 
-			    world.Current_Room = 3; }
+			    world.Current_Room = 2; }
         }
         else if (world.Current_Room == 7) {
         	if (d1.overlaps(p) && Gdx.input.isKeyPressed(Keys.E)) {
