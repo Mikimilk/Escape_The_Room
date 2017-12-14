@@ -35,13 +35,101 @@ public class GameScreen extends ScreenAdapter{
         	world.getPlayer().move(Player.DIRECTION_LEFT);
         	world.Player_side = 4; //Left
         }
-        
-        Rectangle d1 = new Rectangle(world.getDoorRight().X ,world.getDoorRight().Y ,world.getDoorRight().Width ,world.getDoorRight().Height);
+        Rectangle d1 = new Rectangle(world.getDoorLeft().X ,world.getDoorLeft().Y ,world.getDoorLeft().Width ,world.getDoorLeft().Height);
+        Rectangle d2 = new Rectangle(world.getDoorMid().X ,world.getDoorMid().Y ,world.getDoorMid().Width ,world.getDoorMid().Height);
+        Rectangle d3 = new Rectangle(world.getDoorRight().X ,world.getDoorRight().Y ,world.getDoorRight().Width ,world.getDoorRight().Height);
         Rectangle p = new Rectangle(world.getPlayer().getX() ,world.getPlayer().getY() ,world.getPlayer().Width ,world.getPlayer().Height);
-        if (d1.overlaps(p) && Gdx.input.isKeyPressed(Keys.SPACE)) {
-        	world.getPlayer().getPosition().x = 100;
-        	world.getPlayer().getPosition().y = 100; 
-        	world.Current_Room = 2;
+        
+        if (world.Current_Room == 1) {
+	        if (d1.overlaps(p) && Gdx.input.isKeyPressed(Keys.E)) {
+	        	world.getPlayer().getPosition().x = 104;
+	        	world.getPlayer().getPosition().y = 40; 
+	        	world.Current_Room = 4; }
+	        if (d2.overlaps(p) && Gdx.input.isKeyPressed(Keys.E)) {
+		        world.getPlayer().getPosition().x = 195;
+		        world.getPlayer().getPosition().y = 40; 
+		        world.Current_Room = 2; }
+		    if (d3.overlaps(p) && Gdx.input.isKeyPressed(Keys.E)) {
+			    world.getPlayer().getPosition().x = 283;
+			    world.getPlayer().getPosition().y = 40; 
+			    world.Current_Room = 3; }
+        }
+        
+        else if (world.Current_Room == 2) {
+	        if (d1.overlaps(p) && Gdx.input.isKeyPressed(Keys.E)) {
+	        	world.getPlayer().getPosition().x = 104;
+	        	world.getPlayer().getPosition().y = 40; 
+	        	world.Current_Room = 4; }
+	        if (d2.overlaps(p) && Gdx.input.isKeyPressed(Keys.E)) {
+		        world.getPlayer().getPosition().x = 195;
+		        world.getPlayer().getPosition().y = 40; 
+		        world.Current_Room = 5; }
+		    if (d3.overlaps(p) && Gdx.input.isKeyPressed(Keys.E)) {
+			    world.getPlayer().getPosition().x = 283;
+			    world.getPlayer().getPosition().y = 40; 
+			    world.Current_Room = 1; }
+        }
+        
+        else if (world.Current_Room == 3) {
+	        if (d1.overlaps(p) && Gdx.input.isKeyPressed(Keys.E)) {
+	        	world.getPlayer().getPosition().x = 104;
+	        	world.getPlayer().getPosition().y = 40; 
+	        	world.Current_Room = 2; }
+	        if (d2.overlaps(p) && Gdx.input.isKeyPressed(Keys.E)) {
+		        world.getPlayer().getPosition().x = 195;
+		        world.getPlayer().getPosition().y = 40; 
+		        world.Current_Room = 4; }
+		    if (d3.overlaps(p) && Gdx.input.isKeyPressed(Keys.E)) {
+			    world.getPlayer().getPosition().x = 283;
+			    world.getPlayer().getPosition().y = 40; 
+			    world.Current_Room = 7; }
+        }
+        
+        else if (world.Current_Room == 4) {
+	        if (d1.overlaps(p) && Gdx.input.isKeyPressed(Keys.E)) {
+	        	world.getPlayer().getPosition().x = 104;
+	        	world.getPlayer().getPosition().y = 40; 
+	        	world.Current_Room = 5; }
+		    if (d3.overlaps(p) && Gdx.input.isKeyPressed(Keys.E)) {
+			    world.getPlayer().getPosition().x = 283;
+			    world.getPlayer().getPosition().y = 40; 
+			    world.Current_Room = 2; }
+        }
+        
+        else if (world.Current_Room == 5) {
+	        if (d1.overlaps(p) && Gdx.input.isKeyPressed(Keys.E)) {
+	        	world.getPlayer().getPosition().x = 104;
+	        	world.getPlayer().getPosition().y = 40; 
+	        	world.Current_Room = 6; }
+	        if (d2.overlaps(p) && Gdx.input.isKeyPressed(Keys.E)) {
+		        world.getPlayer().getPosition().x = 195;
+		        world.getPlayer().getPosition().y = 40; 
+		        world.Current_Room = 4; }
+		    if (d3.overlaps(p) && Gdx.input.isKeyPressed(Keys.E)) {
+			    world.getPlayer().getPosition().x = 283;
+			    world.getPlayer().getPosition().y = 40; 
+			    world.Current_Room = 3; }
+        }
+        
+        else if (world.Current_Room == 6) {
+	        if (d1.overlaps(p) && Gdx.input.isKeyPressed(Keys.E)) {
+	        	world.getPlayer().getPosition().x = 104;
+	        	world.getPlayer().getPosition().y = 40; 
+	        	world.Current_Room = 5; }
+		    if (d3.overlaps(p) && Gdx.input.isKeyPressed(Keys.E)) {
+			    world.getPlayer().getPosition().x = 283;
+			    world.getPlayer().getPosition().y = 40; 
+			    world.Current_Room = 3; }
+        }
+        else if (world.Current_Room == 7) {
+        	if (d1.overlaps(p) && Gdx.input.isKeyPressed(Keys.E)) {
+	        	world.getPlayer().getPosition().x = 104;
+	        	world.getPlayer().getPosition().y = 40; 
+	        	world.Current_Room = 1; }
+		    if (d3.overlaps(p) && Gdx.input.isKeyPressed(Keys.E)) {
+			    world.getPlayer().getPosition().x = 283;
+			    world.getPlayer().getPosition().y = 40; 
+			    world.Current_Room = 3; }
         }
         
         //To pick up items

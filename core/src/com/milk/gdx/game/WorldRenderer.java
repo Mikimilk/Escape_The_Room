@@ -75,6 +75,7 @@ public class WorldRenderer{
 	    Vector2 DoorRight = world.getDoorRight().getPosition();
 	    Vector2 DoorLeft = world.getDoorLeft().getPosition();
 	    Vector2 DoorMid = world.getDoorMid().getPosition();
+	    Vector2 key = world.getKey().getPosition();
 
 	    //Draw background
 	    if (world.Current_Room == 1) {
@@ -86,6 +87,47 @@ public class WorldRenderer{
 	    }
 	    else if (world.Current_Room == 2) {
 	    	batch.draw(room2, 0 , 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+	    	//Draw door
+		    batch.draw(door2, DoorRight.x, DoorRight.y);
+		    batch.draw(door2, DoorLeft.x, DoorLeft.y);
+		    batch.draw(door2, DoorMid.x, DoorMid.y);
+	    }
+	    else if (world.Current_Room == 3) {
+	    	batch.draw(room3, 0 , 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+	    	//Draw door
+		    batch.draw(door3, DoorRight.x, DoorRight.y);
+		    batch.draw(door3, DoorLeft.x, DoorLeft.y);
+		    batch.draw(door3, DoorMid.x, DoorMid.y);
+	    }
+	    else if (world.Current_Room == 4) {
+	    	batch.draw(room4, 0 , 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+	    	//Draw door
+		    batch.draw(door4, DoorRight.x, DoorRight.y);
+		    batch.draw(door4, DoorLeft.x, DoorLeft.y);
+	    }
+	    else if (world.Current_Room == 5) {
+	    	batch.draw(room5, 0 , 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+	    	//Draw door
+		    batch.draw(door5, DoorRight.x, DoorRight.y);
+		    batch.draw(door5, DoorLeft.x, DoorLeft.y);
+		    batch.draw(door5, DoorMid.x, DoorMid.y);
+	    }
+	    else if (world.Current_Room == 6) {
+	    	batch.draw(room6, 0 , 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+	    	//Draw door
+		    batch.draw(door6, DoorRight.x, DoorRight.y);
+		    batch.draw(door6, DoorLeft.x, DoorLeft.y);
+		    //Draw key
+		    if(!world.Has_Key) {
+			batch.draw(keyImg, key.x, key.y);	
+		    }
+	    }
+	    else if (world.Current_Room == 7) {
+	    	batch.draw(room7, 0 , 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+	    	//Draw door
+		    batch.draw(door7, DoorRight.x, DoorRight.y);
+		    batch.draw(door7, DoorLeft.x, DoorLeft.y);
+		    batch.draw(door8, DoorMid.x, DoorMid.y);
 	    }
 
 	    //Draw charactor
@@ -99,11 +141,6 @@ public class WorldRenderer{
 	    if(world.Player_side==1) {
 	    batch.draw(playerBack, pos.x, pos.y); }
 	    
-	    //Draw key
-	    Vector2 key = world.getKey().getPosition();
-	    if(!world.Has_Key) {
-		batch.draw(keyImg, key.x, key.y);	
-	    }
 	    batch.end();
 	}
 }

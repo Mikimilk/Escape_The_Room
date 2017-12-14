@@ -8,7 +8,7 @@ public class Player {
 	float X;
 	float Y;
 	
-	public int SPEED = 5;
+	public int SPEED = 3;
     public static final int DIRECTION_UP = 1;
     public static final int DIRECTION_RIGHT = 2;
     public static final int DIRECTION_DOWN = 3;

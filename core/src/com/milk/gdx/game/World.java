@@ -21,7 +21,7 @@ public class World {
         doorRight = new Door(283,135);
         doorLeft = new Door(104,135);
         doorMid = new Door(195,135);
-        key = new Key(250,500);
+        key = new Key(100,100);
     }
  
     Player getPlayer() {
