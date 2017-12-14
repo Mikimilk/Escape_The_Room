@@ -3,8 +3,8 @@ package com.milk.gdx.game;
 import com.badlogic.gdx.math.Vector2;
 
 public class Player {
-	int Width = 30;
-	int Height = 30;
+	int Width = 20;
+	int Height = 20;
 	float X;
 	float Y;
 	

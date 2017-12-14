@@ -13,19 +13,39 @@ public class WorldRenderer{
 	private Texture playerLeft;
 	private Texture playerRight;
 	
-	private Texture background;
-	private Texture background2;
-	private Texture furnitureImg;
+	private Texture room1;
+	private Texture room2;
+	private Texture room3;
+	private Texture room4;
+	private Texture room5;
+	private Texture room6;
+	private Texture room7;
+
+	//Door
+	private Texture door1;
+	private Texture door2;
+	private Texture door3;
+	private Texture door4;
+	private Texture door5;
+	private Texture door6;
+	private Texture door7;
+	private Texture door8;
+	
+	//Key
 	private Texture keyImg;
 
-	//private SpriteBatch batch;
-	
 	WorldRenderer(EscapeTheRoom EscapeGame,World world) {
 	    this.EscapeGame = EscapeGame;
 	    this.world = world;
 	    //Room//
-	    background = new Texture("bg.png");
-	    background2 = new Texture("bg2.jpg");
+	    room1 = new Texture("room1.png");
+	    room2 = new Texture("room2.png");
+	    room3 = new Texture("room3.png");
+	    room4 = new Texture("room4.png");
+	    room5 = new Texture("room5.png");
+	    room6 = new Texture("room6.png");
+	    room7 = new Texture("room7.png");
+	    
 	    
 	    //Player//
 	    playerFront = new Texture("charactor_01.png");
@@ -33,28 +53,40 @@ public class WorldRenderer{
 	    playerRight = new Texture("charactor_03.png");
 	    playerBack = new Texture("charactor_04.png");
 	    
-	    furnitureImg = new Texture("Tree_05.png");
+	    //Key//
 	    keyImg = new Texture("Key.png");
 	    
-	    
+	    //Door//
+	    door1 = new Texture("Door1.png");
+	    door2 = new Texture("Door2.png");
+	    door3 = new Texture("Door3.png");
+	    door4 = new Texture("Door4.png");
+	    door5 = new Texture("Door5.png");
+	    door6 = new Texture("Door6.png");
+	    door7 = new Texture("Door7.png");
+	    door8 = new Texture("Door8.png");
+	   
 	}
 	
 	public void render(float delta) {
 		SpriteBatch batch = EscapeGame.batch;
 	    batch.begin();
+	    //VectorDoor
+	    Vector2 DoorRight = world.getDoorRight().getPosition();
+	    Vector2 DoorLeft = world.getDoorLeft().getPosition();
+	    Vector2 DoorMid = world.getDoorMid().getPosition();
+
 	    //Draw background
 	    if (world.Current_Room == 1) {
-	        batch.draw(background, 0 , 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());    }
-	    else if (world.Current_Room == 2) {
-	    	batch.draw(background2, 0 , 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+	        batch.draw(room1, 0 , 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());    
+	      //Draw door
+		    batch.draw(door1, DoorRight.x, DoorRight.y);
+		    batch.draw(door1, DoorLeft.x, DoorLeft.y);
+		    batch.draw(door1, DoorMid.x, DoorMid.y);
 	    }
-	    //Draw door
-	    Vector2 tree1 = world.getFurniture1().getPosition();
-	    batch.draw(furnitureImg, tree1.x, tree1.y);
-	    Vector2 tree2 = world.getFurniture2().getPosition();
-	    batch.draw(furnitureImg, tree2.x, tree2.y);
-	    Vector2 tree3 = world.getFurniture3().getPosition();
-	    batch.draw(furnitureImg, tree3.x, tree3.y);
+	    else if (world.Current_Room == 2) {
+	    	batch.draw(room2, 0 , 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+	    }
 
 	    //Draw charactor
 	    Vector2 pos = world.getPlayer().getPosition();

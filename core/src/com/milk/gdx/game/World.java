@@ -5,9 +5,10 @@ import com.badlogic.gdx.math.Vector2;
 public class World {
     private Player player;
     private EscapeTheRoom EscapeGame;
-    private Furniture furniture1;
-    private Furniture furniture2;
-    private Furniture furniture3;
+    private Door doorRight;
+    private Door doorLeft;
+    private Door doorMid;
+    
     private Key key;
     
     int Current_Room = 1;
@@ -17,9 +18,9 @@ public class World {
     World(EscapeTheRoom EscapeGame) {
         this.EscapeGame = EscapeGame;
         player = new Player(100,100);
-        furniture1 = new Furniture(300,300);
-        furniture2 = new Furniture(400,300);
-        furniture3 = new Furniture(500,300);
+        doorRight = new Door(283,135);
+        doorLeft = new Door(104,135);
+        doorMid = new Door(195,135);
         key = new Key(250,500);
     }
  
@@ -27,16 +28,16 @@ public class World {
         return player;
     }
     
-    Furniture getFurniture1() {
-    return furniture1;
+    Door getDoorRight() {
+    return doorRight;
     }
     
-    Furniture getFurniture2() {
-    return furniture2;
+    Door getDoorLeft() {
+    return doorLeft;
     }
     
-    Furniture getFurniture3() {
-    return furniture3;
+    Door getDoorMid() {
+    return doorMid;
     }
     
     Key getKey() {

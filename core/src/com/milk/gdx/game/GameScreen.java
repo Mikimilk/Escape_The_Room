@@ -36,9 +36,9 @@ public class GameScreen extends ScreenAdapter{
         	world.Player_side = 4; //Left
         }
         
-        Rectangle d1 = new Rectangle(world.getFurniture1().X ,world.getFurniture1().Y ,world.getFurniture1().Width ,world.getFurniture1().Height);
+        Rectangle d1 = new Rectangle(world.getDoorRight().X ,world.getDoorRight().Y ,world.getDoorRight().Width ,world.getDoorRight().Height);
         Rectangle p = new Rectangle(world.getPlayer().getX() ,world.getPlayer().getY() ,world.getPlayer().Width ,world.getPlayer().Height);
-        if (d1.overlaps(p)) {
+        if (d1.overlaps(p) && Gdx.input.isKeyPressed(Keys.SPACE)) {
         	world.getPlayer().getPosition().x = 100;
         	world.getPlayer().getPosition().y = 100; 
         	world.Current_Room = 2;
