@@ -20,6 +20,8 @@ public class WorldRenderer{
 	private Texture room5;
 	private Texture room6;
 	private Texture room7;
+	private Texture success;
+	private Texture how_to_play;
 
 	//Door
 	private Texture door1;
@@ -45,6 +47,8 @@ public class WorldRenderer{
 	    room5 = new Texture("room5.png");
 	    room6 = new Texture("room6.png");
 	    room7 = new Texture("room7.png");
+	    success = new Texture("success.png");
+	    how_to_play = new Texture("how_to_play.png");
 	    
 	    
 	    //Player//
@@ -78,7 +82,11 @@ public class WorldRenderer{
 	    Vector2 key = world.getKey().getPosition();
 
 	    //Draw background
-	    if (world.Current_Room == 1) {
+	    if (world.Current_Room == 0) {
+	    	batch.draw(how_to_play, 0 , 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+	    	batch.draw(playerFront, 200, 50);
+	    }
+	    else if (world.Current_Room == 1) {
 	        batch.draw(room1, 0 , 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());    
 	      //Draw door
 		    batch.draw(door1, DoorRight.x, DoorRight.y);
@@ -129,17 +137,26 @@ public class WorldRenderer{
 		    batch.draw(door7, DoorLeft.x, DoorLeft.y);
 		    batch.draw(door8, DoorMid.x-15, DoorMid.y-5);
 	    }
+		else if (world.Current_Room ==8) {
+			batch.draw(success, 0 , 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+		    }
+	    
 
 	    //Draw charactor
 	    Vector2 pos = world.getPlayer().getPosition();
-	    if(world.Player_side==3) {
-	    batch.draw(playerFront, pos.x, pos.y); }
-	    if(world.Player_side==4) {
-	    batch.draw(playerLeft, pos.x, pos.y); }
-	    if(world.Player_side==2) {
-	    batch.draw(playerRight, pos.x, pos.y); }
-	    if(world.Player_side==1) {
-	    batch.draw(playerBack, pos.x, pos.y); }
+	    if(world.Current_Room != 0) {
+		    if(world.Player_side==3) {
+		    batch.draw(playerFront, pos.x, pos.y); }
+		    if(world.Player_side==4) {
+		    batch.draw(playerLeft, pos.x, pos.y); }
+		    if(world.Player_side==2) {
+		    batch.draw(playerRight, pos.x, pos.y); }
+		    if(world.Player_side==1) {
+		    batch.draw(playerBack, pos.x, pos.y); }
+	    }
+	    if(world.Has_Key && !world.Use_Key) {
+	    	batch.draw(keyImg, 20, 189);
+	    }
 	    
 	    batch.end();
 	}
