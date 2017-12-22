@@ -61,7 +61,7 @@ public class WorldRenderer{
 	    keyImg = new Texture("Key.png");
 	    
 	    //Door//
-	    door1 = new Texture("Door1.png");
+	    door1 = new Texture("Door_1.png");
 	    door2 = new Texture("Door2.png");
 	    door3 = new Texture("Door3.png");
 	    door4 = new Texture("Door4.png");
